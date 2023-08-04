@@ -4,10 +4,12 @@ export default function ItemList({
   href,
   title,
   description,
+  hello,
 }: {
   href: string;
   title: string;
   description: string;
+  hello: boolean;
 }) {
   return (
     <a
@@ -16,7 +18,9 @@ export default function ItemList({
       target="_blank"
       rel="noopener noreferrer"
     >
-      <h2>{title}</h2>
+      <h2>
+        {title} {hello ? "hello" : ""}
+      </h2>
       <p>{description}</p>
     </a>
   );

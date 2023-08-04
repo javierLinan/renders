@@ -2,12 +2,18 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import List from "./List";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Main() {
+  const [hello, setHello] = useState<boolean>(false);
+
   return (
     <main className={`${styles.main} ${inter.className}`}>
+      <button onClick={() => setHello((prevState) => !prevState)}>
+        Toggle Hello
+      </button>
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
@@ -43,7 +49,7 @@ export default function Main() {
         />
       </div>
 
-      <List />
+      <List hello={hello} />
     </main>
   );
 }
