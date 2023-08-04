@@ -1,16 +1,20 @@
+import HelloContext from "@/context/HelloContext";
 import styles from "@/styles/Home.module.css";
+import { useContext } from "react";
 
 export default function ItemList({
   href,
   title,
   description,
-  hello,
 }: {
   href: string;
   title: string;
   description: string;
-  hello: boolean;
 }) {
+  const context = useContext(HelloContext);
+
+  console.log("ItemList");
+
   return (
     <a
       href={href}
@@ -19,7 +23,7 @@ export default function ItemList({
       rel="noopener noreferrer"
     >
       <h2>
-        {title} {hello ? "hello" : ""}
+        {title} {context.hello ? "hello" : ""}
       </h2>
       <p>{description}</p>
     </a>

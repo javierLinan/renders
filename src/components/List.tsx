@@ -1,7 +1,9 @@
 import styles from "@/styles/Home.module.css";
 import ItemList from "./ItemList";
 
-export default function List({ hello }: { hello: boolean }) {
+export default function List() {
+  console.log("List");
+
   const items = [
     {
       href: "https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
@@ -36,7 +38,6 @@ export default function List({ hello }: { hello: boolean }) {
           href={href}
           title={title}
           description={description}
-          hello={hello}
         />
       ))}
     </div>
